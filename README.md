@@ -3,6 +3,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
+# Process to run application
+=> clone project
+=> after cloning go to folder directory
+=> open command promp 
+=> run command (npm install) for this must be pre-installed npm and angular-cli
+=> run command (npm start) or (ng serve)
+=> open browser and 'http://localhost:4200'
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

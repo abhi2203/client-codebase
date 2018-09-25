@@ -3,10 +3,10 @@
 <body>
 <div id="login_bg" class="login_bg"></div>
 <div class="container">
- 
       <div class="login-box">
         <form class="form-signin well bordr" (ngSubmit)="isFromSubmitted=true; f.form.valid && login()" #f="ngForm" novalidate>
-          <h3 class="text-center noTop"> <img src="" class="img-responsive"> </h3>
+         <strong>Login to add employee</strong>
+          <br>
           <br>
           <div class="form-group" [ngClass]="{ 'has-error': (isFromSubmitted || username.touched) && !username.valid }">
             <div class="input-group">
