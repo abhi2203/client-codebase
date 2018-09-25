@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="modal-custom-header row">
+        <button type="button" class="close modal_close" data-dismiss="modal" (click)="closeModel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+
+    <div class="modal-body">
+        <form role="form" #f="ngForm" novalidate>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group" [ngClass]="{ 'has-error': (submitted || firstName.touched) && firstName.hasError('required')}">
+                        <label>First Name<span class="text-danger">*</span></label>
+                        <div>
+                            <input type="text" name="firstName" class="form-control input-sm" placeholder="First Name" [(ngModel)]="newForm.firstName"
+                                #firstName="ngModel" [required]="true">
+                            <span class="text-danger" *ngIf="(submitted || firstName.touched) && firstName.hasError('required')">Required Field</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group" [ngClass]="{ 'has-error': (submitted || lastName.touched) && lastName.hasError('required')}">
+                        <label>Last Name<span class="text-danger">*</span></label>
+                        <div>
+                            <input type="text" name="lastName" class="form-control input-sm" placeholder="Last Name" [(ngModel)]="newForm.lastName" #lastName="ngModel"
+                                [required]="true">
+                            <span class="text-danger" *ngIf="(submitted || lastName.touched) && lastName.hasError('required')">Required Field</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group" [ngClass]="{ 'has-error': (submitted || gender.touched) && gender.hasError('required')}">
+                        <label>Gender<span class="text-danger">*</span></label>
+                        <div>
+                            <select name="gender" class="form-control input-sm" placeholder="Gender" [(ngModel)]="newForm.gender" #gender="ngModel" [required]="true">
+                      <option>Male</option>   
+                      <option>Female</option>  
+                    </select>
+                            <span class="text-danger" *ngIf="(submitted || gender.touched) && gender.hasError('required')">Required Field</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group" [ngClass]="{ 'has-error': (submitted || dob.touched) && dob.hasError('required')}">
+                        <label>Date Of Birth<span class="text-danger">*</span></label>
+                        <div>
+                            <!--<input type="text" name="dob" class="form-control input-sm" placeholder="DOB" [(ngModel)]="newForm.firstName" #dob="ngModel"
+                                [required]="true">-->
+                              <input class="form-control" name="dob" class="form-control input-sm" placeholder="DOB" [(ngModel)]="newForm.dob" #dob="ngModel"
+                                [required]="true"
+                                placeholder="Datepicker"
+                                ngModel
+                                bsDatepicker
+                                [maxDate]="maxDate">
+                            <span class="text-danger" *ngIf="(submitted || dob.touched) && dob.hasError('required')">Required Field</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group" [ngClass]="{ 'has-error': (submitted || department.touched) && department.hasError('required')}">
+                        <label for="emp_idno">Department<span class="text-danger">*</span></label>
+                        <div>
+                            <input type="text" name="department" class="form-control input-sm" placeholder="Department" [(ngModel)]="newForm.department"
+                                #department="ngModel" [required]="true">
+                            <span class="text-danger" *ngIf="(submitted || department.touched) && department.hasError('required')">Required Field</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding: 13px">
+                <span class="text-danger text-left"> {{successOrFailMsg }} </span>
+                <span class="text-success text-left"> {{showMessage}} </span>
+                <!--<button *ngIf="this.requestID == null" type="submit" class="btn btn-primary" (click)="submitted=true;f.form.valid && submitSingleRequest(f)"
+            [disabled]="createSingleRequest.managerName == ''||createSingleRequest.employeeSelectedLandmarkId == null || loadingRoundSubmit"><i class="fa fa-spinner fa-spin" *ngIf="loadingRoundSubmit"></i>Submit</button>-->
+
+                <button type="submit" class="btn btn-primary" (click)="submitted=true;f.form.valid && submit(f)">Submit</button>
+                <button type="button" id="cance" class="btn btn-default" (click)="closeModel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
