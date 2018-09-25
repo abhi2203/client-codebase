@@ -3,6 +3,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
+=> Login screen implemented to proper flow.
+
 # Process to run application
 => clone project
 => after cloning go to folder directory
