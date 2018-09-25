@@ -1,8 +1,9 @@
 .header{
-    color: blue;
-    background-color: lightblue;
+    color: #ffffff;
+    background-color: #487382;
     text-align: center;
     height: 50px;
+    line-height: 3rem;
 }
 .background{
     background-color: #f3f3f3
@@ -17,4 +18,14 @@
 .tbl {
     margin-top: 5px;
     margin-left: 7px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #3b7cc1;
+    border-color: #007bff;
+}
+.logout{
+    cursor: pointer;
+    color: #b58080;
+    margin-left: 92%;
 }

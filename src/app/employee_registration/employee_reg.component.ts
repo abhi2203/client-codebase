@@ -14,7 +14,7 @@ newForm = {
     'firstName': '',
     'lastName': '',
     'gender': '',
-    'dob': Date,
+    'dob': '',
     'department': '',
   };
   maxDate: Date;

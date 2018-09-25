@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EmployeeRegService } from './employee_reg.service';
 import { RegistrationComponent } from './../employee_registration/employee_reg.component';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class EmployeeRegDashboardComponent implements OnInit{
 
     bsModalRef: BsModalRef;
     allEmployee: any;
-    constructor(private modalService: BsModalService, private employeeService: EmployeeRegService) {
+    constructor(private modalService: BsModalService, private employeeService: EmployeeRegService, private routes: Router) {
 
     }
 
@@ -32,6 +33,10 @@ export class EmployeeRegDashboardComponent implements OnInit{
                 this.ngOnInit();
             }
          })
+    }
+
+    logout(){
+         this.routes.navigate(['login']);
     }
 
 }
